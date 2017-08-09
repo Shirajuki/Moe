@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<link rel="icon" href=".pics/icon.png" />
+<link rel="icon" href="./pics/icon.png" />
 <title>Neko Neko Nyaa </title>
 
 <link rel="stylesheet" type="text/css" href="./css/style_h.css" />
@@ -33,8 +33,15 @@
 		<img src="./pics/dance5.gif" width="208"; height="208">
 	</div> </a>
 	
-	<p class="floater-right">No waifus<br>No nekos<br>Not optimized for mobile devices<br></p>
+	<p class="floater-right">No waifus<br>No nekos<br><a href="#" id="ok" class="ok">Optimized for mobile devices</a></p>
 	
 <script type="text/javascript" src="./js/mute.js"></script>
+<script>
+var ok1 = document.getElementById("ok");
+
+ok1.addEventListener("click", function() {
+	document.getElementById("ok").innerHTML = "Just kidding, get rekt!";
+});
+</script>
 </body>
 </html>

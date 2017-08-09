@@ -75,3 +75,6 @@ div#gif1 {
 	position: fixed;
 	bottom: 0px;
 }
+a#ok:hover {
+	color: #e54c99;
+}
