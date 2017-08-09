@@ -75,7 +75,7 @@ li a:hover:not(.active) {
 }
 div#gif1 {
 	position: fixed;
-	bottom: 0px;
+	bottom: -4px;
 }
 a#ok:hover {
 	color: #e54c99;
