@@ -15,6 +15,9 @@ video#bgvid {
     background-size: cover;
 	opacity: 0.6;
 }
+audio {
+    display:none;
+}
 div#content {
 	border: 5px solid yellow;
 	border-radius: 3px;
