@@ -29,6 +29,51 @@ div#content {
 	padding: 8px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
 }
+div#list1 {
+	border: 5px solid orange;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,0.5);
+	float: left;
+	position: fixed;
+	text-align: left;
+	top: 250px;
+	width: 350px;
+	left: 200px;
+	font-weight: bold;
+	margin: 16px 0px 0px 16px;
+	padding: 8px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
+}
+div#list2 {
+	border: 5px solid orange;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,0.5);
+	float: left;
+	position: fixed;
+	text-align: left;
+	top: 250px;
+	width: 350px;
+	left: 600px;
+	font-weight: bold;
+	margin: 16px 0px 0px 16px;
+	padding: 8px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
+}
+div#list3 {
+	border: 5px solid orange;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,0.5);
+	float: left;
+	position: fixed;
+	text-align: left;
+	top: 250px;
+	width: 350px;
+	left: 1000px;
+	font-weight: bold;
+	margin: 16px 0px 0px 16px;
+	padding: 8px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
+}
 a, a:visited {
 	color: orange;
 	text-decoration: none;
