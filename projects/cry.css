@@ -229,12 +229,12 @@ div#pic2 {
 div#pic3 {
 	position: fixed;
 	bottom: -4px;
-	left: -3.8%;
+	left: 0;
 }
 div#pic4 {
 	position: fixed;
 	bottom: -4px;
-	right: -3.8%;
+	right: 0;
 }
 div#more1 {
 	position: fixed;
@@ -255,9 +255,9 @@ div#more2 {
 	animation-delay: 15s;
 }
 div#rip {
-	position: absolute;
+	position: fixed;
 	top: 30%;
-	right: 38%;
+	left: 38%;
 }
 div#more3 {
 	position: fixed;
