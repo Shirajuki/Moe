@@ -255,7 +255,7 @@ div#more2 {
 	animation-delay: 15s;
 }
 div#rip {
-	position: fixed;
+	position: absolute;
 	top: 30%;
 	right: 38%;
 }
