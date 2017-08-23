@@ -34,15 +34,23 @@ div#content {
 	padding: 8px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
 }
+div#click {
+	position: fixed;
+	color: DeepPink;
+	top: 1%;
+	text-align: right;
+	font-weight: bold;
+	right: 1%;
+}
+div#click:hover {
+	color: white;
+}
 a, a:visited {
-	color: DeepSkyBlue;
+	color: DeepPink;
 	text-decoration: none;
 }
 a:hover {
 	color: white;
-}
-a#mute {
-	font-weight: bold;
 }
 .tear {
     text-align: center;
@@ -128,38 +136,38 @@ a#mute {
 @-webkit-keyframes tear {
   0% {
     opacity: 1;
-	-webkit-transform: translate(0, 0px);
+	transform: translate(0, 0px);
   }
   5% {
-	-webkit-transform: translate(-10px, 50px);
+	transform: translate(-10px, 50px);
   }
   16% {
-	-webkit-transform: translate(10px, 160px);
+	transform: translate(10px, 160px);
   }
   30% {
-	-webkit-transform: translate(-10px, 300px);
+	transform: translate(-10px, 300px);
   }
   43% {
-	-webkit-transform: translate(10px, 430px);
+	transform: translate(10px, 430px);
   }
   55% {
-	-webkit-transform: translate(10px, 550px);
+	transform: translate(10px, 550px);
   }
   69% {
-	-webkit-transform: translate(-10px, 690px);
+	transform: translate(-10px, 690px);
   }
   86% {
-	-webkit-transform: translate(10px, 860px); 
+	transform: translate(10px, 860px); 
   }
   90% {
-	-webkit-transform: translate(-10px, 900px);
+	transform: translate(-10px, 900px);
   }
   100% {
     opacity: 0;
-	-webkit-transform: translate(10px, 900px);
+	transform: translate(10px, 900px);
   }
 }
-@-webkit-keyframes pic1 {
+@keyframes pic1 {
   0% {
     opacity: 0;
   }
@@ -170,7 +178,29 @@ a#mute {
     opacity: 0;
   }
 }
-@-webkit-keyframes pic2 {
+@keyframes pic2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes more1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes more2 {
   0% {
     opacity: 0;
   }
@@ -184,26 +214,72 @@ a#mute {
 div#pic1 {
 	position: fixed;
 	bottom: 10px;
-	right:10px;
+	right:3%;
 	opacity: 0;
-	-webkit-animation: pic1 12s infinite  linear;
+	animation: pic1 12s infinite  linear;
 }
 div#pic2 {
 	position: fixed;
 	bottom: 50px;
-	left: 10px;
+	left: 3%;
 	opacity: 0;
-	-webkit-animation: pic2 14s infinite  linear;
+	animation: pic2 12s infinite  linear;
 	animation-delay: 5s;
 }
 div#pic3 {
 	position: fixed;
 	bottom: -4px;
-	left: -72px;
+	left: -3.8%;
 }
 div#pic4 {
 	position: fixed;
 	bottom: -4px;
-	right: -70px;
+	right: -3.8%;
+}
+div#more1 {
+	position: fixed;
+	top: 30%;
+	right: 10%;
+	opacity: 0;
+	transform: rotate(-17deg);
+	animation: more1 12s infinite  linear;
+	animation-delay: 10s;
+}
+div#more2 {
+	position: fixed;
+	top: 30%;
+	left: 10%;
+	opacity: 0;
+	transform: rotate(17deg);
+	animation: more2 15s infinite  linear;
+	animation-delay: 15s;
+}
+div#rip {
+	position: fixed;
+	top: 30%;
+	right: 38%;
+}
+div#more3 {
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	opacity: 0;
+	transform: rotate(-17deg);
+	animation: more2 12s infinite  linear;
+	animation-delay: 3s;
+}
+div#rip2 {
+	position: fixed;
+	bottom: 10px;
+	right:0px;
+	opacity: 0;
+	animation: pic1 12s infinite  linear;
+}
+div#rip3 {
+	position: fixed;
+	bottom: 8%;
+	opacity: 0;
+	animation: pic2 12s infinite  linear;
+	animation-delay: 7s;
 }
 
