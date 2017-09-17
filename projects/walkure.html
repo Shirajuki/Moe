@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Neko Neko Nyaa</title>
+  <link rel="icon" href="../pics/icon.png" />
+  <meta charset="utf-8" />
+  <link href="walkure.css" rel="stylesheet" type="text/css">
+ <body>
+	<div id="content">
+		<h1>※ 『Walkure is LOVE ～PLAYLIST～』 ※</h1>
+		<p id="timer"></p>
+		<audio id="bgvid" controls="controls" autoplay="" autobuffer="" src="https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3" onloadstart="this.volume=0.5">
+		</audio>
+		
+		<p><a href="#" id="mute">『Mute』</a></p>
+		<ul>
+			<li><a id="list1" onClick="play1()" value="a" href="#"><strong>01.</strong> Koi! Halation THE WAR～without Freyja～</a></li>
+			<li><a id="list2" onClick="play2()" value="a" href="#"><strong>02.</strong> Ichido dakeno Koi nara</a></li>
+			<li><a id="list3" onClick="play3()" value="a" href="#"><strong>03.</strong> Jiritikku♡BEGINNER</a></li>
+			<li><a id="list4" onClick="play4()" value="a" href="#"><strong>04.</strong> Fukakuteisei☆COSMIC MOVEMENT</a></li>
+			<li><a id="list5" onClick="play5()" value="a" href="#"><strong>05.</strong> Bokura no Senjou</a></li>
+			<li><a id="list6" onClick="play6()" value="a" href="#"><strong>06.</strong> NEO STREAM</a></li>
+			<li><a id="list7" onClick="play7()" value="a" href="#"><strong>07.</strong> AXIA～Daisuki de Daikirai～</a></li>
+			<li><a id="list8" onClick="play8()" value="a" href="#"><strong>08.</strong> GIRAFFE BLUES</a></li>
+			<li><a id="list9" onClick="play9()" value="a" href="#"><strong>09.</strong> Walküre Attack!</a></li>
+			<li><a id="list10" onClick="play10()" value="a" href="#"><strong>10.</strong> Rune ga Pikatto Hikattara ～Album Version～</a></li>
+			<li><a id="list11" onClick="play11()" value="a" href="#"><strong>11.</strong> Ikenai Border Line ～Album Version～</a></li>
+			<li><a id="list12" onClick="play12()" value="a" href="#"><strong>12.</strong> Koi! Halation THE WAR ～Album Version～</a></li>
+		</ul>
+	</div>
+	
+	
+	<script type="text/javascript" src="../js/mute.js"></script>
+<script>
+var h = 0;
+var m = 0;
+var s = 0;
+var t;
+window.onload = loading;
+function loading() {
+    s++;
+	if (s == 60) {
+        s = 0;
+        m++;
+        if (m == 60) {
+            m = 0;
+            h++;	
+        }
+	}
+	document.getElementById('timer').innerHTML = "Walkure'd for" + " " + (h ? (h > 9 ? h : "0" + h) : "00") + ":" + (m ? (m > 9 ? m : "0" + m) : "00") + ":" + (s > 9 ? s : "0" + s);
+	if (playlist == 13) {
+		playlist = 1;
+	}
+}
+setInterval(loading, 1000);
+
+var playlist = 1;
+var nextTrack = "https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3";
+var musicPlayer = document.getElementById('bgvid');
+musicPlayer.onended = function(){
+	playlist += 1;
+	next();
+	musicPlayer.src = nextTrack;
+}
+window.onload = next;
+
+////
+function play1() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3'
+	playlist = 1;
+	next();
+}
+function play2() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3'
+	playlist = 2;
+	next();
+}
+function play3() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/41pm2ajvwvs9pzd/3.mp3'
+	playlist = 3;
+	next();
+}
+function play4() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/32krv8b0ulica7t/4.mp3'
+	playlist = 4;
+	next();
+}
+function play5() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/xz69sy8jrcoreky/5.mp3'
+	playlist = 5;
+	next();
+}
+function play6() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/0w6yy6e7gl1t8mt/6.mp3'
+	playlist = 6;
+	next();
+}
+function play7() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/xinrj7rd03a83c7/7.mp3'
+	playlist = 7;
+	next();
+}
+function play8() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/jm7kziy2vjxvkcu/8.mp3'
+	playlist = 8;
+	next();
+}
+function play9() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/ul79x5vh82faufc/9.mp3'
+	playlist = 9;
+	next();
+}
+function play10() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/4xkov64mjbbhcx3/10.mp3'
+	playlist = 10;
+	next();
+}
+function play11() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/3md30nxdt0c6f58/11.mp3'
+	playlist = 11;
+	next();
+}
+function play12() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/zjzbjyuh293f6nm/12.mp3'
+	playlist = 12;
+	next();
+}
+////
+function next() {
+	document.getElementById('list1').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list2').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list3').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list4').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list5').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list6').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list7').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list8').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list9').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list10').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list11').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list12').style.backgroundColor = "rgba(0,0,0,0.5)";
+	if (playlist == 1 || playlist == 13) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3";
+		document.getElementById('list1').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 2) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3";
+		document.getElementById('list2').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 3) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/41pm2ajvwvs9pzd/3.mp3";
+		document.getElementById('list3').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 4) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/32krv8b0ulica7t/4.mp3"
+		document.getElementById('list4').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 5) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/xz69sy8jrcoreky/5.mp3"
+		document.getElementById('list5').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 6) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/0w6yy6e7gl1t8mt/6.mp3"
+		document.getElementById('list6').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 7) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/xinrj7rd03a83c7/7.mp3"
+		document.getElementById('list7').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 8) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/jm7kziy2vjxvkcu/8.mp3"
+		document.getElementById('list8').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 9) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/ul79x5vh82faufc/9.mp3"
+		document.getElementById('list9').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 10) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/4xkov64mjbbhcx3/10.mp3"
+		document.getElementById('list10').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 11) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/3md30nxdt0c6f58/11.mp3"
+		document.getElementById('list11').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 12) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/zjzbjyuh293f6nm/12.mp3"
+		document.getElementById('list12').style.backgroundColor = "RebeccaPurple ";
+	}
+}
+setTimeout(start,10)
+function start() {
+	var start = document.getElementById('list1').style.backgroundColor = "RebeccaPurple";
+}
+	/*
+	1  https://www.dropbox.com/s/x748zxfxiudaycc/1.mp3?dl=0
+	2  https://www.dropbox.com/s/cikrko02pxagfgk/2.mp3?dl=0
+	3  https://www.dropbox.com/s/41pm2ajvwvs9pzd/3.mp3?dl=0
+	4  https://www.dropbox.com/s/32krv8b0ulica7t/4.mp3?dl=0
+	5  https://www.dropbox.com/s/xz69sy8jrcoreky/5.mp3?dl=0
+	6  https://www.dropbox.com/s/0w6yy6e7gl1t8mt/6.mp3?dl=0
+	7  https://www.dropbox.com/s/xinrj7rd03a83c7/7.mp3?dl=0
+	8  https://www.dropbox.com/s/jm7kziy2vjxvkcu/8.mp3?dl=0
+	9  https://www.dropbox.com/s/ul79x5vh82faufc/9.mp3?dl=0
+	10 https://www.dropbox.com/s/4xkov64mjbbhcx3/10.mp3?dl=0
+	11 https://www.dropbox.com/s/3md30nxdt0c6f58/11.mp3?dl=0
+	12 https://www.dropbox.com/s/zjzbjyuh293f6nm/12.mp3?dl=0
+	*/
+</script>
+<div class="container"></div>
+ </body>
+</html>
