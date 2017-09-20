@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+ <head>
+  <title>JonnyIsBoss</title>
+  <meta charset="utf-8" />
+   <link href="prefiks.css" rel="stylesheet" type="text/css">
+  <style>
+	output {
+		border: 1px solid DeepPink;
+		width: 100px;
+	}
+	output#svar1 {
+		width: 100px;
+	}
+	#test {
+		width: 100px;
+	}
+	output#svar2 {
+		position: inherit;
+		left: 66.8%;
+	}
+	output#svar3 {
+		position: inherit;
+		left: 66.8%;
+	}
+	output#svar4 {
+		position: inherit;
+		left: 66.8%;
+	}
+	output#svar5 {
+		position: inherit;
+		left: 66.8%;
+	}
+	#start {
+		background-color: DeepPink;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 2px 2px black;
+		color: white;
+		padding: 15px 240px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 24px;
+		cursor: pointer;
+	}
+	#start:hover {
+		background-color: DarkGray;
+		color: DeepPink;	
+	}
+	#start:active {
+		background-color: black;
+		box-shadow: 2px 2px #666;
+		transform: translateY(4px);
+	}
+  </style>
+  <script>
+window.onload = loading
+	function loading() {
+		document.getElementById("start").onclick = convert;
+	}
+	document.addEventListener("keydown", keyDownHandler, false);
+	function keyDownHandler(e) {
+    if(e.keyCode == 13) {
+		convert();
+		console.log('go')
+    }
+}
+	var b;
+	function convert() {
+	//a
+	var a = document.getElementById("ledd").value;
+	//b
+	if (document.getElementById('select1').value == 'nm' && document.getElementById('select2').value == 'm') {
+		b = 100000000000; //billion
+	}
+	if (document.getElementById('select1').value == 'microm' && document.getElementById('select2').value == 'm') {
+		b = 100000000; //million
+	}
+	if (document.getElementById('select1').value == 'mm' && document.getElementById('select2').value == 'm') {
+		b = 1000;
+	}
+	if (document.getElementById('select1').value == 'cm' && document.getElementById('select2').value == 'm') {
+		b = 100;
+	}
+	var c = a/b;	
+		document.getElementById("svar1").innerHTML = c;
+		var string = c.toExponential();
+		document.getElementById("svar11").innerHTML = string;
+		
+		var position, position2;
+		string.toString();
+			console.log("say"+string);
+			console.log(string.length);
+		if (string.length < 6) {
+			position = 1;
+			position2 = 1;
+		}else {
+			position = 2;
+			position2 = 3;
+		}
+		
+		console.log("pos" + position);
+		console.log("pos2" + position2);
+		var replace1 = string.replace(".","");
+		var output1 = [replace1.slice(0, position), ".", replace1.slice(position)].join('');
+		var output12 = [output1.slice(-1)].join('');
+		var output133 = Number(output12);
+		var output13 = output133 - 1;
+		var output14 = output1.slice(0, -1) + output13;
+			var check1 = string.charAt(string.length-4);
+			if (check1 == "e") {
+				output12 = [output1.slice(-2)].join('');
+				output133 = Number(output12-1);
+				output13 = output133;
+				output14 = output1.slice(0, -2) + output13;
+			}
+		document.getElementById("svar2").innerHTML = output14;
+		
+		var replace2 = string.replace(".","");
+		var output2 = [replace2.slice(0, position2), ".", replace2.slice(position2)].join('');
+		var output22 = [output2.slice(-1)].join('');
+		var output233 = Number(output22);
+		var output23 = output233 - 2;
+		var check2 = string.charAt(string.length-4);
+		var output24 = output2.slice(0, -1) + output23;
+			var check2 = string.charAt(string.length-4);
+			if (check2 == "e") {
+				output22 = [output2.slice(-2)].join('');
+				output233 = Number(output22-2);
+				output23 = output233;
+				output24 = output2.slice(0, -2) + output23;
+			}
+		document.getElementById("svar3").innerHTML = output24;
+		//
+		var replace3 = string.replace(".","");
+		var output3 = [replace3.slice(0, 0), "0.", replace3.slice(0)].join('');
+		var output32 = [output3.slice(-1)].join('');
+		var output333 = Number(output32);
+		var output33 = output333 + 1;
+		var output34 = output3.slice(0, -1) + output33;
+		document.getElementById("svar4").innerHTML = output34;
+		
+		var replace4 = string.replace(".","");
+		var output4 = [replace4.slice(0, 0), "0.0", replace4.slice(0)].join('');
+		var output42 = [output4.slice(-1)].join('');
+		var output433 = Number(output42);
+		var output43 = output433 + 2;
+		var output44 = output4.slice(0, -1) + output43;
+		document.getElementById("svar5").innerHTML = output44;
+	}
+
+  </script>
+ </head>
+ <body>
+ <div id="content">
+<h1>Convert prefixes to meter</h1>
+	<output id="svar3" type="text" value="0"></output>
+	</br>
+	</br>
+	<output id="svar2" type="text" value="0"></output>
+	</br>
+	</br>
+		<input id="ledd" type="text" size="10" value="0" />
+		<select id="select1">
+			<option value="nm">nm</option>
+			<option value="microm">μm</option>
+			<option value="mm">mm</option>
+			<option value="cm">cm</option>
+		</select>
+		<span id="test">
+		= <output id="svar1" type="text" value="0"></output>
+		</span>
+		<select id="select2">
+			<option value="m">m</option>
+		</select>
+		<span id="test"> 
+		= <output id="svar11" type="text" value="0">Standard form</output>
+		</span>
+	</br>
+	</br>
+	<output id="svar4" type="text" value="0"></output>
+	</br>
+	</br>
+	<output id="svar5" type="text" value="0"></output>
+</br></br></br></br>
+<button id="start" >Convert</button>
+</div>
+ </body>
+</html>

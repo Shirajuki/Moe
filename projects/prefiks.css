@@ -1,0 +1,73 @@
+/* main container */
+body {
+	font-family: Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: DeepPink;
+	background-color: #222;
+	margin: 0 0 0 0px;
+	overflow: hidden;
+}
+.container{
+	right:0px;
+	top:0px;
+	z-index:-100;
+	background-size: cover;
+	width:100%;
+	height:100%;
+	position: fixed;
+	left:0px;
+	background-color: black;
+}
+div#content {
+	border: 5px solid DeepPink;
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.5);
+	float: left;
+	position: fixed;
+	text-align: center;
+	font-weight: bold;
+	top: 50%;
+	left: 50%;
+	padding: 15px;
+	transform: translate(-50%,-50%);
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
+}
+div#click {
+	position: fixed;
+	color: DeepPink;
+	top: 1%;
+	text-align: right;
+	font-weight: bold;
+	right: 1%;
+}
+div#click:hover {
+	color: white;
+}
+ul {
+	border: 1px solid DeepPink;
+	text-align: center;
+	padding: 15px;
+    list-style-type: none;
+	font-weight: normal;
+}
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+/*li a[value=active] {
+    background-color: MediumVioletRed;
+    color: black;
+}*/
+li a:hover:not([value=active]) {
+    background-color: #555;
+    color: white;
+}
+a, a:visited {
+	color: DeepPink;
+	text-decoration: none;
+}
+a:hover {
+	color: white;
+}
+
+
