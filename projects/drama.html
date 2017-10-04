@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Neko Neko Nyaa</title>
+  <link rel="icon" href="../pics/icon.png" />
+  <meta charset="utf-8" />
+  <link href="drama.css" rel="stylesheet" type="text/css">
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	max-height: 150px;
+}
+  div#test {
+	overflow-y: auto;
+	height:500px;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+  </style>
+ <body>
+	<div id="content">
+		<h1>※ 『Drama ～PLAYLIST～』 ※</h1>
+		<p id="timer"></p>
+		<audio id="bgvid" controls="controls" autoplay="" autobuffer="" src="https://dl.dropboxusercontent.com/s/2f7365beulwov79/Xing%20yue%20shen%20hua%20-%20Jin%20Sha.mp3">
+		</audio>
+		<p><a href="#" id="mute">『Mute』</a></p>
+		<p><a href="#" id="lol">『LOOP』</a></p>
+		<ul>
+			<li><a id="list1" onClick="play1()" value="a" href="#"><strong>01.</strong> 星月神话 Xing Yue Shen Hua - Myth of the Stars and Moon [Jin Sha/KYM]</a></li>
+			<li><a id="list2" onClick="play2()" value="a" href="#"><strong>02.</strong> 美丽的神话 Mei Li De Shen Hua - Endless love [Hu Ge]</a></li>
+			<li><a id="list3" onClick="play2()" value="a" href="#"><strong>03.</strong> NOPE</a></li>
+		</ul>
+		<div id="test">
+		<table>
+			<tr>
+				<th>Lyrics1</th>
+				<th>Lyrics2</th>
+				<th>Lyrics3</th>
+			</tr>
+			<tr>
+				<td><pre id="lyric1">我的一生最美好的场景
+就是遇见你
+在人海茫茫中静静宁望着你
+陌生又熟悉
+
+尽管呼吸着同一天空的气息
+却无法拥抱到你
+如果转换了时空身份和姓名
+但愿认得你眼睛
+
+千年之后的你会在哪里
+身边有怎样风景
+我们的故事并不算美丽
+却如此难以忘记
+
+尽管呼吸着同一天空的气息
+却无法拥抱到你
+如果转换了时空身份和姓名
+但愿认得你眼睛
+
+千年之后的你会在哪里
+身边有怎样风景
+我们的故事并不算美丽
+却如此难以忘记
+
+如果当初勇敢地在一起
+会不会不同结局
+你会不会也有千言万语
+埋在沉默的梦里</pre></td>
+				<td><pre id="lyric2">wo de yi sheng zui mei hao de chang jing
+jiu shi yu jian ni
+zai ren hai mang mang zhong jing jing ning wang zhe ni
+mo sheng you shu/shou xi
+
+jin guan hu xi zhe tong yi tian kong de qi xi
+que wu fa yong bao dao ni
+ru guo zhuan huan le shi kong shen fen he xing ming
+dan yuan ren de ni yan jing
+
+qian nian zhi hou de ni hui zai na li
+shen bian you zen yang feng jing
+wo men de gu shi bing bu suan mei li
+que ru ci nan yi wang ji
+
+jin guan hu xi zhe tong yi tian kong de qi xi
+que wu fa yong bao dao ni
+ru guo zhuan huan le shi kong shen fen he xing ming
+dan yuan ren de ni yan jing
+
+qian nian zhi hou de ni hui zai na li
+shen bian you zen yang feng jing
+wo men de gu shi bing bu suan mei li
+que ru ci nan yi wang ji
+
+ru guo dang chu yong gan di zai yi qi
+hui bu hui bu tong jie ju
+ni hui bu hui ye you qian yan wan yu
+mai zai chen mo de meng li
+</pre></td>
+				<td><pre id="lyric3">The most beautiful scene in my life
+Was when I met you
+In the midst of a crowd, silently looking at you
+Strange,yet also familiar
+
+Despite breathing in air from the same sky
+I am not able to embrace you
+If time, identity and name were changed
+I hope I will still remember your eyes
+
+Where will you be in a thousand years time?
+What would the scenery look like around you?
+Our story does not count as beautiful
+Yet it is unforgettable
+
+Despite breathing in air from the same sky
+I am not able to embrace you
+If time, identity and name were changed
+I hope I will still remember your eyes
+
+Where will you be in a thousand years time?
+What would the scenery look like around you?
+Our story does not count as beautiful
+Yet it is unforgettable
+
+If we had bravely remained together
+Would there be a different ending today?
+Would you also have lots of words to say to me
+That were silently buried in your dreams</pre></td>
+			</tr>
+			
+		</table>
+		<div>
+		
+	</div>
+	
+	
+	<script type="text/javascript" src="../js/mute.js"></script>
+<script>
+var music = document.getElementById('bgvid');
+var muteButtona = document.getElementById("lol");
+var loop = false;
+muteButtona.addEventListener("click", function() {
+	if (loop == false) {
+		loop = true;
+		document.getElementById('lol').style.color = "white";
+	} else {
+		loop = false;
+		document.getElementById('lol').style.color = "DeepPink";
+	}
+});
+
+var h = 0;
+var m = 0;
+var s = 0;
+var t;
+window.onload = loading;
+function loading() {
+    s++;
+	if (s == 60) {
+        s = 0;
+        m++;
+        if (m == 60) {
+            m = 0;
+            h++;	
+        }
+	}
+	document.getElementById('timer').innerHTML = "Heartbroken in " + " " + (h ? (h > 9 ? h : "0" + h) : "00") + ":" + (m ? (m > 9 ? m : "0" + m) : "00") + ":" + (s > 9 ? s : "0" + s);
+	if (playlist == 3) {
+		playlist = 1;
+	}
+}
+setInterval(loading, 1000);
+
+var playlist = 1;
+var nextTrack = "https://dl.dropboxusercontent.com/s/2f7365beulwov79/Xing%20yue%20shen%20hua%20-%20Jin%20Sha.mp3";
+var musicPlayer = document.getElementById('bgvid');
+musicPlayer.onended = function(){
+	if (loop == true) {
+		musicPlayer.play();
+	} else {
+		playlist += 1;
+		next();
+		musicPlayer.src = nextTrack;
+	}
+}
+window.onload = next;
+
+////
+function play1() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/2f7365beulwov79/Xing%20yue%20shen%20hua%20-%20Jin%20Sha.mp3'
+	playlist = 1;
+	next();
+	lyrics();
+}
+function play2() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3'
+	playlist = 2;
+	next();
+	lyrics();
+}
+function play3() {
+	musicPlayer.src = 'https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3'
+	playlist = 4;
+	next();
+	lyrics();
+}
+////
+function next() {
+	document.getElementById('list1').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list2').style.backgroundColor = "rgba(0,0,0,0.5)";
+	document.getElementById('list3').style.backgroundColor = "rgba(0,0,0,0.5)";
+	if (playlist == 1 || playlist == 3) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3";
+		document.getElementById('list1').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 2) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3";
+		document.getElementById('list2').style.backgroundColor = "RebeccaPurple ";
+	}if (playlist == 4) {
+		nextTrack = "https://dl.dropboxusercontent.com/s/cikrko02pxagfgk/2.mp3";
+		document.getElementById('list3').style.backgroundColor = "RebeccaPurple ";
+	}
+}
+setTimeout(start,10)
+function start() {
+	var start = document.getElementById('list1').style.backgroundColor = "RebeccaPurple";
+}
+function lyrics() {
+	if (playlist == 1 || playlist == 4) {
+		document.getElementById('lyric1').innerHTML = "我的一生最美好的场景<br>就是遇见你<br>在人海茫茫中静静宁望着你<br>陌生又熟悉<br><br>尽管呼吸着同一天空的气息<br>却无法拥抱到你<br>如果转换了时空身份和姓名<br>但愿认得你眼睛<br><br>千年之后的你会在哪里<br>身边有怎样风景<br>我们的故事并不算美丽<br>却如此难以忘记<br><br>尽管呼吸着同一天空的气息<br>却无法拥抱到你<br>如果转换了时空身份和姓名<br>但愿认得你眼睛<br><br>千年之后的你会在哪里<br>身边有怎样风景<br>我们的故事并不算美丽<br>却如此难以忘记<br><br>如果当初勇敢地在一起<br>会不会不同结局<br>你会不会也有千言万语<br>埋在沉默的梦里";
+		document.getElementById('lyric2').innerHTML = "wo de yi sheng zui mei hao de chang jing<br>jiu shi yu jian ni<br>zai ren hai mang mang zhong jing jing ning wang zhe ni<br>mo sheng you shu/shou xi<br><br>jin guan hu xi zhe tong yi tian kong de qi xi<br>que wu fa yong bao dao ni<br>ru guo zhuan huan le shi kong shen fen he xing ming<br>dan yuan ren de ni yan jing<br><br>qian nian zhi hou de ni hui zai na li<br>shen bian you zen yang feng jing<br>wo men de gu shi bing bu suan mei li<br>que ru ci nan yi wang ji<br><br>jin guan hu xi zhe tong yi tian kong de qi xi<br>que wu fa yong bao dao ni<br>ru guo zhuan huan le shi kong shen fen he xing ming<br>dan yuan ren de ni yan jing<br><br>qian nian zhi hou de ni hui zai na li<br>shen bian you zen yang feng jing<br>wo men de gu shi bing bu suan mei li<br>que ru ci nan yi wang ji<br><br>ru guo dang chu yong gan di zai yi qi<br>hui bu hui bu tong jie ju<br>ni hui bu hui ye you qian yan wan yu<br>mai zai chen mo de meng li";
+		document.getElementById('lyric3').innerHTML = "The most beautiful scene in my life<br>Was when I met you<br>In the midst of a crowd, silently looking at you<br>Strange,yet also familiar<br><br>Despite breathing in air from the same sky<br>I am not able to embrace you<br>If time, identity and name were changed<br>I hope I will still remember your eyes<br><br>Where will you be in a thousand years time?<br>What would the scenery look like around you?<br>Our story does not count as beautiful<br>Yet it is unforgettable<br><br>Despite breathing in air from the same sky<br>I am not able to embrace you<br>If time, identity and name were changed<br>I hope I will still remember your eyes<br><br>Where will you be in a thousand years time?<br>What would the scenery look like around you?<br>Our story does not count as beautiful<br>Yet it is unforgettable<br><br>If we had bravely remained together<br>Would there be a different ending today?<br>Would you also have lots of words to say to me<br>That were silently buried in your dreams";
+	}
+	if (playlist == 2) {
+		document.getElementById('lyric1').innerHTML = "text2";
+		document.getElementById('lyric2').innerHTML = "text2";
+		document.getElementById('lyric3').innerHTML = "text2";
+	}
+	if (playlist == 4) {
+		document.getElementById('lyric1').innerHTML = "text2";
+		document.getElementById('lyric2').innerHTML = "text2";
+		document.getElementById('lyric3').innerHTML = "text2";
+	}
+}
+</script>
+<div class="container"></div>
+</body>
+</html>

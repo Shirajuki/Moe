@@ -32,6 +32,19 @@
 	
 	<script type="text/javascript" src="../js/mute.js"></script>
 <script>
+var music = document.getElementById('bgvid');
+var muteButtona = document.getElementById("lol");
+var loop = false;
+muteButtona.addEventListener("click", function() {
+	if (loop == false) {
+		loop = true;
+		document.getElementById('lol').style.color = "white";
+	} else {
+		loop = false;
+		document.getElementById('lol').style.color = "DeepPink";
+	}
+});
+
 var h = 0;
 var m = 0;
 var s = 0;
@@ -58,9 +71,13 @@ var playlist = 1;
 var nextTrack = "https://dl.dropboxusercontent.com/s/x748zxfxiudaycc/1.mp3";
 var musicPlayer = document.getElementById('bgvid');
 musicPlayer.onended = function(){
-	playlist += 1;
-	next();
-	musicPlayer.src = nextTrack;
+	if (loop == true) {
+		musicPlayer.play();
+	} else {
+		playlist += 1;
+		next();
+		musicPlayer.src = nextTrack;
+	}
 }
 window.onload = next;
 
