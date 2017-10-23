@@ -1,22 +1,24 @@
 body {
 	font-family: Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: yellow;
+	color: DeepSkyBlue;
 	background-color: #222;
 	margin: 0 0 0 0px;
 	overflow: hidden;
 }
 video#bgvid {
     position: fixed;
-    right: 0px;
     top: 0px;
     width: 100%;
-    height: auto;
+    height: auto	;
     z-index: -100;
     background-size: cover;
 	opacity: 0.6;
 }
+audio {
+    display:none;
+}
 div#content {
-	border: 5px solid yellow;
+	border: 5px solid DeepSkyBlue;
 	border-radius: 3px;
 	background-color: rgba(0,0,0,0.5);
 	float: left;
@@ -30,7 +32,7 @@ div#content {
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
 }
 a, a:visited {
-	color: yellow;
+	color: DeepSkyBlue;
 	text-decoration: none;
 }
 a:hover {
@@ -56,23 +58,25 @@ ul {
     padding: 0;
     width: 120px;
     background-color: rgba(0,0,0,0.5);
-    border: 3px solid yellow;
+    border: 3px solid DeepSkyBlue;
 }
 li a {
     display: block;
     padding: 8px 16px;
     text-decoration: none;
-	border: solid;
 }
 li a.active {
-    background-color: #cccc00;
+    background-color: DodgerBlue;
     color: black;
 }
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
-div#nyaa {
+div#gif1 {
 	position: fixed;
-	bottom: 0px;
+	bottom: -4px;
+}
+a#ok:hover {
+	color: #e54c99;
 }

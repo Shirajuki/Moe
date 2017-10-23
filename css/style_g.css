@@ -107,6 +107,7 @@ li a {
     display: block;
     padding: 8px 16px;
     text-decoration: none;
+	border: solid;
 }
 li a.active {
     background-color: Chocolate;
