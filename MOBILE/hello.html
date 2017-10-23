@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="HandheldFriendly" content="true">
 <link rel="icon" href="../pics/icon.png" />
 <title>Neko Neko Nyaa </title>
 
@@ -44,6 +41,16 @@ var ok1 = document.getElementById("ok");
 
 ok1.addEventListener("click", function() {
 	document.getElementById("ok").innerHTML = "Just kidding, get rekt!";
+});
+
+// get the video
+var video = document.querySelector('video');
+// use the whole window and a *named function*
+window.addEventListener('touchstart', function videoStart() {
+  video.play();
+  console.log('first touch');
+  // remove from the window and call the function we are removing
+  this.removeEventListener('touchstart', videoStart);
 });
 </script>
 </body>
